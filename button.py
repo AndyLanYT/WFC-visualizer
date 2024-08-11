@@ -1,22 +1,25 @@
 import pygame
-from constants import BUTTON_WIDTH, BUTTON_HEIGHT
+
+from IRenderable import IRenderable
+from IClickable import IClickable
+
 from colors import BLACK, WHITE, DARK_RED, DARK_BLUE
 from fonts import FONT
 
 
-class Button:
-    def __init__(self, text, pos, width=BUTTON_WIDTH, height=BUTTON_HEIGHT):
+class Button(IRenderable, IClickable):
+    def __init__(self, text, pos, render_cfg):
         self.__is_pressed = False
 
-        elevation = int(0.14 * height)
+        elevation = int(0.14 * render_cfg.button_height)
         self.__elevation = elevation
         self.__dynamic_elevation = elevation
         self.__y = pos[1]
 
-        self.__bottom_rect = pygame.Rect(pos, (width, height + elevation))
+        self.__bottom_rect = pygame.Rect(pos, (render_cfg.button_width, render_cfg.button_height + elevation))
         self.__bottom_color = BLACK
 
-        self.__top_rect = pygame.Rect(pos, (width, height))
+        self.__top_rect = pygame.Rect(pos, (render_cfg.button_width, render_cfg.button_height))
         self.__top_color = DARK_BLUE
 
         self.__text_surf = FONT.render(text, True, WHITE)
@@ -41,7 +44,7 @@ class Button:
             self.__top_color = DARK_BLUE
             self.__dynamic_elevation = self.__elevation
 
-    def render(self, screen):
+    def render(self, screen, render_cfg=None, *args, **kwargs):
         self.__top_rect.y = self.__y - self.__dynamic_elevation
         self.__text_rect.center = self.__top_rect.center
 

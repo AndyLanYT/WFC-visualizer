@@ -1,0 +1,199 @@
+{
+    "tileset1": {
+        "sheet_tile_width": 252,
+        "sheet_tile_height": 252,
+        "sheet_gap": 38,
+        "tiles_count": 21,
+        "rows": 3,
+        "cols": 7,
+        "symmetry": 0,
+        "rotation": 0
+    },
+    
+    "tileset2": {
+        "sheet_tile_width": 100,
+        "sheet_tile_height": 100,
+        "sheet_gap": 25,
+        "tiles_count": 5,
+        "rows": 1,
+        "cols": 5,
+        "symmetry": 0,
+        "rotation": 0
+    },
+    
+    "tileset3": {
+        "sheet_tile_width": 14,
+        "sheet_tile_height": 14,
+        "sheet_gap": 3,
+        "tiles_count": 40,
+        "rows": 5,
+        "cols": 8,
+        "symmetry": 0,
+        "rotation": 0
+    },
+    
+    "tileset4": {
+        "sheet_tile_width": 252,
+        "sheet_tile_height": 252,
+        "sheet_gap": 38,
+        "tiles_count": 21,
+        "rows": 3,
+        "cols": 7,
+        "symmetry": 0,
+        "rotation": 0
+    },
+    
+    "tileset5": {
+        "sheet_tile_width": 17,
+        "sheet_tile_height": 17,
+        "sheet_gap": 3,
+        "tiles_count": 25,
+        "rows": 5,
+        "cols": 5,
+        "symmetry": 1,
+        "rotation": 0
+    },
+    
+    "tileset6": {
+        "sheet_tile_width": 2,
+        "sheet_tile_height": 2,
+        "sheet_gap": 1,
+        "tiles_count": 36,
+        "rows": 6,
+        "cols": 6,
+        "symmetry": 1,
+        "rotation": 1
+    },
+
+    "tileset7": {
+        "sheet_tile_width": 252,
+        "sheet_tile_height": 252,
+        "sheet_gap": 38,
+        "tiles_count": 21,
+        "rows": 3,
+        "cols": 7,
+        "symmetry": 0,
+        "rotation": 0
+    },
+    
+    "tileset8": {
+        "sheet_tile_width": 100,
+        "sheet_tile_height": 100,
+        "sheet_gap": 25,
+        "tiles_count": 5,
+        "rows": 1,
+        "cols": 5,
+        "symmetry": 0,
+        "rotation": 0
+    },
+    
+    "tileset9": {
+        "sheet_tile_width": 14,
+        "sheet_tile_height": 14,
+        "sheet_gap": 3,
+        "tiles_count": 40,
+        "rows": 5,
+        "cols": 8,
+        "symmetry": 0,
+        "rotation": 0
+    },
+
+    "tileset10": {
+        "sheet_tile_width": 252,
+        "sheet_tile_height": 252,
+        "sheet_gap": 38,
+        "tiles_count": 21,
+        "rows": 3,
+        "cols": 7,
+        "symmetry": 0,
+        "rotation": 0
+    },
+    
+    "tileset11": {
+        "sheet_tile_width": 100,
+        "sheet_tile_height": 100,
+        "sheet_gap": 25,
+        "tiles_count": 5,
+        "rows": 1,
+        "cols": 5,
+        "symmetry": 0,
+        "rotation": 0
+    },
+    
+    "tileset12": {
+        "sheet_tile_width": 14,
+        "sheet_tile_height": 14,
+        "sheet_gap": 3,
+        "tiles_count": 40,
+        "rows": 5,
+        "cols": 8,
+        "symmetry": 0,
+        "rotation": 0
+    },
+    
+    "tileset13": {
+        "sheet_tile_width": 252,
+        "sheet_tile_height": 252,
+        "sheet_gap": 38,
+        "tiles_count": 21,
+        "rows": 3,
+        "cols": 7,
+        "symmetry": 0,
+        "rotation": 0
+    },
+    
+    "tileset14": {
+        "sheet_tile_width": 17,
+        "sheet_tile_height": 17,
+        "sheet_gap": 3,
+        "tiles_count": 25,
+        "rows": 5,
+        "cols": 5,
+        "symmetry": 1,
+        "rotation": 0
+    },
+    
+    "tileset15": {
+        "sheet_tile_width": 2,
+        "sheet_tile_height": 2,
+        "sheet_gap": 1,
+        "tiles_count": 36,
+        "rows": 6,
+        "cols": 6,
+        "symmetry": 1,
+        "rotation": 1
+    },
+
+    "tileset16": {
+        "sheet_tile_width": 252,
+        "sheet_tile_height": 252,
+        "sheet_gap": 38,
+        "tiles_count": 21,
+        "rows": 3,
+        "cols": 7,
+        "symmetry": 0,
+        "rotation": 0
+    },
+    
+    "tileset17": {
+        "sheet_tile_width": 100,
+        "sheet_tile_height": 100,
+        "sheet_gap": 25,
+        "tiles_count": 5,
+        "rows": 1,
+        "cols": 5,
+        "symmetry": 0,
+        "rotation": 0
+    },
+    
+    "tileset18": {
+        "sheet_tile_width": 14,
+        "sheet_tile_height": 14,
+        "sheet_gap": 3,
+        "tiles_count": 40,
+        "rows": 5,
+        "cols": 8,
+        "symmetry": 0,
+        "rotation": 0
+    }
+}

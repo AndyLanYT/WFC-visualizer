@@ -1,12 +1,15 @@
 import pygame
-from constants import TILES_COUNT, UP, DOWN, LEFT, RIGHT, UP_LEFT, UP_RIGHT, DOWN_LEFT, DOWN_RIGHT
+
+from IRenderable import IRenderable
+
+from directions import UP, DOWN, LEFT, RIGHT, UP_LEFT, UP_RIGHT, DOWN_LEFT, DOWN_RIGHT
 from colors import BLACK
 
 
-class Tile:
+class Tile(IRenderable):
     COUNT = 0
 
-    def __init__(self, image):
+    def __init__(self, image, tilesheet_cfg):
         self.__image = image
 
         image = pygame.transform.scale(image, (20, 20))
@@ -18,7 +21,7 @@ class Tile:
                 pixelset[j].append(pixel)
         
         self.__pixelset = pixelset
-        self.__idx = Tile.COUNT % TILES_COUNT
+        self.__idx = Tile.COUNT % tilesheet_cfg.tiles_count
 
         Tile.COUNT += 1
     
@@ -40,10 +43,12 @@ class Tile:
         elif direction == DOWN_RIGHT:
             return [self.pixelset[-1][-1]]
     
-    def render(self, screen, x, y, size, is_single=False):
+    def render(self, screen, *args, render_cfg=None, **kwargs):
+        x, y, size = args
+
         image = pygame.transform.scale(self.__image, size)
         
-        if not is_single:
+        if not kwargs['is_single']:
             rect = image.get_rect(x=x, y=y)
 
             mouse_pos = pygame.mouse.get_pos()

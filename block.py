@@ -1,14 +1,16 @@
 import random
+
 from tile import Tile
-from constants import SIDE_PAD, TOP_PAD, BLOCK_WIDTH, BLOCK_HEIGHT, TILES_COUNT_IN_ROW, TILE_WIDTH, TILE_HEIGHT, TILE_GAP
+
+from IRenderable import IRenderable
 
 
-class Block:
-    def __init__(self, tileset, x, y):
+class Block(IRenderable):
+    def __init__(self, tileset, x, y, render_cfg):
         self.__tiles = tileset
         
-        self.__x = x + SIDE_PAD
-        self.__y = y + TOP_PAD
+        self.__x = x + render_cfg.side_pad
+        self.__y = y + render_cfg.top_pad
     
     def set_random_tile(self, probabilities):
         self.tiles = random.choices(self.__tiles, [probabilities[tile.idx] for tile in self.__tiles])
@@ -23,7 +25,7 @@ class Block:
             self.__tiles = [val]
         elif isinstance(val, list):
             self.__tiles = val
-        
+    
     @property
     def x(self):
         return self.__x
@@ -32,21 +34,21 @@ class Block:
     def y(self):
         return self.__y
 
-    def render(self, screen):
+    def render(self, screen, render_cfg=None, *args, **kwargs):
         if len(self.__tiles) == 1:
             for tile in self.__tiles:
                 x = self.__x
                 y = self.__y
-                size = BLOCK_WIDTH, BLOCK_HEIGHT
-                tile.render(screen, x, y, size, True)
+                size = render_cfg.block_width, render_cfg.block_height
+                tile.render(screen, x, y, size, is_single=True)
 
         else:
             for tile in self.__tiles:
-                x = self.__x + tile.idx % TILES_COUNT_IN_ROW * (TILE_WIDTH + TILE_GAP)
-                y = self.__y + tile.idx // TILES_COUNT_IN_ROW * (TILE_HEIGHT + TILE_GAP)
-                size = TILE_WIDTH, TILE_HEIGHT
+                x = self.__x + tile.idx %  render_cfg.tiles_count_in_row * (render_cfg.tile_width + render_cfg.tile_gap)
+                y = self.__y + tile.idx // render_cfg.tiles_count_in_row * (render_cfg.tile_height + render_cfg.tile_gap)
+                size = render_cfg.tile_width, render_cfg.tile_height
 
-                tile.render(screen, x, y, size)
+                tile.render(screen, x, y, size, render_cfg=render_cfg, is_single=False)
     
     def __getitem__(self, key):
         for tile in self.__tiles:

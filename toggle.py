@@ -1,18 +1,23 @@
 import pygame
-from constants import TOGGLE_WIDTH, TOGGLE_HEIGHT
+
+from IRenderable import IRenderable
+from IClickable import IClickable
+
+# from constants import TOGGLE_WIDTH, TOGGLE_HEIGHT
 from colors import BLACK, DARK_GREEN, DARK_RED
 
 
-class Toggle:
-    def __init__(self, pos, width=TOGGLE_WIDTH, height=TOGGLE_HEIGHT):
+class Toggle(IRenderable, IClickable):
+    def __init__(self, pos, render_cfg):
         self.__is_pressed = False
         self.__status = True
 
-        self.__bottom_rect = pygame.Rect(pos, (width, height))
+        self.__bottom_rect = pygame.Rect(pos, (render_cfg.toggle_width, render_cfg.toggle_height))
 
-        top_height = int(0.9 * height)
+        top_height = int(0.9 * render_cfg.toggle_height)
         top_width = top_height
-        top_y = pos[1] + (height - top_height) // 2
+        top_y = pos[1] + (render_cfg.toggle_height - top_height) // 2
+        
         self.__top_rect = pygame.Rect((pos[0], top_y), (top_width, top_height))
 
     def check_click(self):
@@ -28,7 +33,7 @@ class Toggle:
 
                     return True
     
-    def render(self, screen):
+    def render(self, screen, *args, **kwargs):
         pygame.draw.rect(screen, BLACK, self.__bottom_rect, border_radius=self.__bottom_rect.height // 2)
         
         if self.__status:
